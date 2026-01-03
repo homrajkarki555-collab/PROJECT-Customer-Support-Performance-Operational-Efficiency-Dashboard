@@ -6,7 +6,7 @@ Key Questions: Were calls consistently answered in a timely manner? Did
 the agents successfully resolve customer issues? How did the speed of answer and average talk duration
 impact customer satisfaction? Were there patterns or trends hidden within the data that could unlock the key to
 achieving optimal call center performance?
-Raw Data- (-)
+Raw Data- (Call Centre Dataset - Sheet1.csv)
 
 #2. Key Transformations & Steps
 Renamed columns to be more descriptive and "code-friendly" (removing spaces and fixing typos).Mapped: Unnamed: 0 to "Conversation_ID", Agent to "Agent_name", Speed of Answer to "Respond_time", and AvgTalkDuration to "Avg_handeling_time".
