@@ -1,0 +1,32 @@
+#Data Preparation Report: Call Center Dataset
+
+# 1. Objective
+The goal is to transform a raw, messy dataset into a structured, clean, and "analysis-ready" format. This involved fixing structural issues, handling missing data logically, and ensuring data types were correct for Power BI visualization.
+Key Questions: Were calls consistently answered in a timely manner? Did
+the agents successfully resolve customer issues? How did the speed of answer and average talk duration
+impact customer satisfaction? Were there patterns or trends hidden within the data that could unlock the key to
+achieving optimal call center performance?
+Raw Data- (-)
+
+#2. Key Transformations & Steps
+Renamed columns to be more descriptive and "code-friendly" (removing spaces and fixing typos).Mapped: Unnamed: 0 to "Conversation_ID", Agent to "Agent_name", Speed of Answer to "Respond_time", and AvgTalkDuration to "Avg_handeling_time".
+Assigned Conversation_ID as the Primary Key (Index). This ensures every row is uniquely identifiable and prevents data duplication during joins.
+The original Date column was mixed. I split this into two distinct columns: Date (for daily trends) and Time (for hourly performance analysis).
+Converted Avg_handeling_time from a string format ($MM:SS$) into Total Seconds (Integer). Visualization tools cannot calculate averages on time strings, but they can on integers.
+Instead of just deleting rows with missing values, I used Grouped Imputation. I calculated the average performance for each specific agent and filled their specific missing values with their own average.
+Satisfaction rating nulls were filled with 0 to represent cases where no feedback was provided.
+Applied Rounding to all numerical values to ensure clean labels in charts and dashboards.
+
+#3. Essential Python Functions Used
+I utilized the pandas library, which is the industry standard for data manipulation.
+.rename()	Changed column names for better readability.
+.set_index()	Established the Primary Key for the dataset.
+pd.to_datetime()	Converted text strings into actual Date/Time objects.
+.dt.date / .dt.time	Extracted specific components from the timestamp.
+.apply()	Used to run custom logic (like converting time to seconds).
+.groupby().transform()	Calculated averages for each agent to fill missing data.
+.fillna() / .replace()	Replaced Nulls and Zeros with calculated values.
+.round()	Cleaned up long decimal values for better presentation.
+
+#4.The data is now 100% clean and stored in df_cleaned 
+Cleaned data- (-)
