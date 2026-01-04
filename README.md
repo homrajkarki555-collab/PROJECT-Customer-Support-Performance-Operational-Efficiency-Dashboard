@@ -1,4 +1,4 @@
-# PROJECT-Customer_Support_Analytics_Cleaning/PowerBI_Dashboard
+# PROJECT-Customer Support Performance & Operational Efficiency Dashboard
 An end-to-end data analytics project using Python for cleaning and Power BI to build an interactive executive dashboard for call center performance tracking.
 
 ## Data Source- Organization OptiConnect Solutions
